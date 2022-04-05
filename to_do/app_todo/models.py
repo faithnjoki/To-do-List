@@ -12,3 +12,11 @@ class Task(models.Model):
     description = models.TextField(null = True, blank=True)
     complete  = models.BooleanField(default=False)
     create_at = models.DateTimeField(auto_now_add=True)
+
+    # defaul is title
+    def __str__(self):
+        return self.title
+
+    # order the model by complete status 
+    class Meta:
+        ordering = ['complete']
