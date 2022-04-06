@@ -8,6 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView,DeleteView
 from django.urls import reverse_lazy
 # login view 
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
 
 from .models import Task
 
@@ -15,16 +16,14 @@ from .models import Task
 
 
 # Create your views here.
-class CustomLogiView(LoginView):
-    template_name =  'templates/app_todo/login.html'
+class CustomLoginView(LoginView):
+    template_name =  'app_todo/login.html'
     fields = '__all__'
-    redirect_authenticated_user = 'True'
+    redirect_authenticated_user = True
 
     # the function overrides the success url am using
-    def get_success_ulrs(self):
+    def get_success_url(self):
         return reverse_lazy('tasks')
-
-
 
 
 class TaskList(ListView):
