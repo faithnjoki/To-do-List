@@ -34,9 +34,17 @@ class CustomLoginView(LoginView):
     
 class RegisterPage(FormView):
     template_name = 'app_todo/register.html'
+    # inbuild django form
     form_class = UserCreationForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('tasks')
+
+    def form_valid(self,form):
+        # saves user 
+            user = form.save()
+            if user is not None:
+                login(self.request, user)
+            return super (RegisterPage,self).form_valid(form)
 
 
 
