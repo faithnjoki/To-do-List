@@ -1,21 +1,24 @@
 # To Do List
 
-
 ### Description
 
 A django application that allows multiple users to view their to do list. They can  create,read, update  and delete their  to do list.
+
 
 ### Author
 
 **Faith Muthoni** - [Github link](https://github.com/faithnjoki/To-do-List)
 
+
 ### Date of current version
 
 6/4/2022
 
+
 ## Project setup instructions
 
 These instructions will get you a copy of the project up and running on your local machine for development.
+
 
 ### Prerequisites
 
@@ -27,6 +30,7 @@ Python Language
 Django framework
 
 ```
+
 
 ### Installing
 
@@ -57,6 +61,7 @@ Run source virtual/bin/activate to activate the virtual environment and python m
 
 ```
 
+
 ## BDD
     As a user, I would like to:
 - Register  account.
@@ -64,15 +69,15 @@ Run source virtual/bin/activate to activate the virtual environment and python m
 - View Create,Read, update or delete on my to do list.
 - Can register Multiple users and login to their account and see their tasks thats shoukd have CRUD too.
 
+
+
 ## Technologies Used
 - Python Django Framework
 - Html AND Css
--Bootstrap
-
+- Bootstrap
 
 
 ## Live link
-
 
 
 ## Support and contact details
