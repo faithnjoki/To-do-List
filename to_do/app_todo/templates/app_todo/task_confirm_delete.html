@@ -1,3 +1,7 @@
+
+{% extends 'app_todo/base.html' %}
+
+{% block content %}
 <a href="{% url 'tasks' %}">Go back</a>
 <form action="" method="POST">
     {% csrf_token %}
@@ -7,3 +11,6 @@
 
 
 </form>
+
+
+{% endblock  %}

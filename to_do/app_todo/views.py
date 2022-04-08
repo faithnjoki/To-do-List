@@ -2,6 +2,7 @@ from asyncio import tasks
 from dataclasses import field
 from multiprocessing import context
 from pyexpat import model
+from urllib import request
 from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -25,7 +26,7 @@ from .models import Task
 class CustomLoginView(LoginView):
     template_name =  'app_todo/login.html'
     fields = '__all__'
-    redirect_authenticated_user = True
+    
 
     # the function overrides the success url am using
     def get_success_url(self):
@@ -46,6 +47,11 @@ class RegisterPage(FormView):
                 login(self.request, user)
             return super (RegisterPage,self).form_valid(form)
 
+    # a logined user cannot be registered again 
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect ('tasks')
+        return super (RegisterPage,self).get( *args, **kwargs)
 
 
 class TaskList( LoginRequiredMixin, ListView):
@@ -56,11 +62,10 @@ class TaskList( LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tasks'] = context['tasks'].filter(user = self.request.user)
+        # arranges incomplete top
         context['count'] = context['tasks'].filter(complete = False).count()
         return context
-    
-       
-    
+
 
 class TaskDetail(DetailView):
     model = Task
@@ -68,7 +73,7 @@ class TaskDetail(DetailView):
 
 class TaskCreate(CreateView):
     model = Task
-    fields = ['title','description', 'complete']
+    fields = ['title','description','complete']
     # redirrect Value 
     success_url = reverse_lazy('tasks')
     

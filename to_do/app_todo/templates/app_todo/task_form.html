@@ -1,3 +1,8 @@
+
+{% extends 'app_todo/base.html' %}
+
+{% block content %}
+
 <h3>task form</h3>
 <a href="{% url 'tasks' %}">Go back</a>
 
@@ -7,3 +12,5 @@
 
     <input type="submit" value="Submit">
 </form>
+{% endblock  %}
+
