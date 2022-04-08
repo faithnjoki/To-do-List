@@ -60,7 +60,6 @@ Run source virtual/bin/activate to activate the virtual environment and python m
 ## BDD
     As a user, I would like to:
 
-
 - Register and account.
 - Login the registered account. 
 - View Create,Read, update or delete on my to do list.
@@ -69,7 +68,9 @@ Run source virtual/bin/activate to activate the virtual environment and python m
 
 ## Technologies Used
 - Python Django Framework
-- Html 
+- Html AND Css
+-Bootstrap
+
 
 
 ## Live link
