@@ -59,12 +59,10 @@ Run source virtual/bin/activate to activate the virtual environment and python m
 
 ## BDD
     As a user, I would like to:
-
-- Register and account.
+- Register  account.
 - Login the registered account. 
 - View Create,Read, update or delete on my to do list.
-- Can register Multiple users and login to their account and see their tasks thats shoukd have the CRUD too.
-
+- Can register Multiple users and login to their account and see their tasks thats shoukd have CRUD too.
 
 ## Technologies Used
 - Python Django Framework
