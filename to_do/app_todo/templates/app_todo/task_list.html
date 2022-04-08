@@ -1,17 +1,20 @@
 {% extends 'app_todo/base.html' %}
 {% block content %}
-
-
+<div class="container"> 
 {% if request.user.is_authenticated %}
-<p>{{request.user}}</p>
-<a href="{% url 'logout' %}">Logout</a>
+<h3>Hello {{request.user |title}},</h3>
+
+<h4>You have {{count}} incomplete tasks.</h4>
+<a href="{% url 'logout' %}" style="position: relative; left: 480px;" button type="button" class="btn btn-primary">Logout</a>
 {% else %}
 <a href="{% url 'login' %}">Login</a>
-{% endif %}
+{% endif %} 
+
 <hr>
-<h1>My to do list</h1>
-<a href="{% url 'task-create' %}">Add Task</a>
-<table>
+<a href="{% url 'task-create' %}" button type="button" class="btn btn-success">Add Task</a>
+<br><br>
+
+<table">
     <tr>
         <th>Item</th>
         <th></th>
@@ -20,12 +23,23 @@
     {% for task in tasks %}
     <tr>
         <td>{{task.title}}</td>
-        <td><a href="{% url  'task' task.id %}">View</a></td>
-        <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <td><a href="{% url 'task-update' task.id %} " button type="button" class="btn btn-secondary">Edit</a></td>
+              </div>
+              <div class="col-md-6">
+                <td><a href="{% url 'task-delete' task.id %}" button type="button" class="btn btn-danger">Delete</a></td>
+              </div>
+              
+            </div>
+          </div>
+           
     </tr>
     {% empty %}
     <h3>No item in list</h3>
     {% endfor %}
 </table>
 {% endblock %}
+
+</div>
