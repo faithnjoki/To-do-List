@@ -30,9 +30,9 @@
             
             {% endif %}
             <br>   
-        <td><a href="{% url 'task-update' task.id %} " button type="button" class="btn btn-secondary">Edit</a></td> 
-
-        <td><a href="{% url 'task-delete' task.id %}" button type="button" class="btn btn-danger">Delete</a></td>
+        <td><a href="{% url 'task-update' task.id %} " style="margin-left:40px" button type="button" class="btn btn-secondary">Edit</a></td> 
+        <td><a href="{% url 'task' task.id %} " style="margin-left:40px" button type="button" class="btn btn-secondary">View</a></td>
+        <td><a href="{% url 'task-delete' task.id %}" style="margin-left:40px" button type="button" class="btn btn-danger">Delete</a></td>
     </tr>
     {% empty %}
     <h3>No item in list</h3>
