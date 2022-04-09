@@ -9,37 +9,34 @@
 {% else %}
 <a href="{% url 'login' %}">Login</a>
 {% endif %} 
-
 <hr>
 <a href="{% url 'task-create' %}" button type="button" class="btn btn-success">Add Task</a>
 <br><br>
-
-<table">
+<table>
+    
     <tr>
         <th>Item</th>
-        <th></th>
-        <th></th>
     </tr>
+   
     {% for task in tasks %}
+      
     <tr>
         <td>{{task.title}}</td>
-        <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <td><a href="{% url 'task-update' task.id %} " button type="button" class="btn btn-secondary">Edit</a></td>
-              </div>
-              <div class="col-md-6">
-                <td><a href="{% url 'task-delete' task.id %}" button type="button" class="btn btn-danger">Delete</a></td>
-              </div>
-              
-            </div>
-          </div>
-           
+            {% if task.complete %}
+            <li><del>{{task}}</del></li>
+            
+            {% else %}
+            <li><ins>{{task}}</ins></li>
+            
+            {% endif %}
+            <br>   
+        <td><a href="{% url 'task-update' task.id %} " button type="button" class="btn btn-secondary">Edit</a></td> 
+
+        <td><a href="{% url 'task-delete' task.id %}" button type="button" class="btn btn-danger">Delete</a></td>
     </tr>
     {% empty %}
     <h3>No item in list</h3>
     {% endfor %}
 </table>
 {% endblock %}
-
 </div>
