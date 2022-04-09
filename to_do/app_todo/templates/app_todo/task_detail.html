@@ -1,6 +1,15 @@
 {% extends 'app_todo/base.html' %}
 
 {% block content %}
-<h3>task {{task}} </h3>
+
+<h1>Task :  {{task.title}} </h1>
+<hr>
+<h4>Description :  {{task.description}} </h4>
+<br>
+
+<h6>Time:  {{task.create_at}}</h6>
+
+
+
 
 {% endblock  %}
