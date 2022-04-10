@@ -1,5 +1,4 @@
-
- {% extends 'app_todo/base.html' %}
+{% extends 'app_todo/base.html' %}
 
 {% block content %}
 <h1>Login</h1>
@@ -8,11 +7,8 @@
         {{form.as_p}}
         <input type="submit" value="Login">
 
-
 <p>Dont have an account? <a href="{%  url 'register'%}">Register</a></p>
 
  </form>
-
-
 
 {% endblock  %}

@@ -6,17 +6,16 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Task(models.Model):
-   
     user = models.ForeignKey(User,on_delete=models.CASCADE,null = True, blank=True )
     title =models.CharField(max_length=200,null = True, blank=True)
     description = models.TextField(null = True, blank=True)
     complete  = models.BooleanField(default=False)
     create_at = models.DateTimeField(auto_now_add=True)
 
-    # defaul is title
+    # Default title
     def __str__(self):
         return self.title
 
-    # order the model by complete status 
+    # Order the model by complete status 
     class Meta:
         ordering = ['complete']
