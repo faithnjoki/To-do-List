@@ -28,6 +28,7 @@ Git
 Github account
 Python Language
 Django framework
+PostgreSQL
 
 ```
 
