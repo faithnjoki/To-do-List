@@ -2,7 +2,7 @@
 
 ### Description
 
-A django application that allows multiple users to view their to do list. They can  create,read, update  and delete their  to do list.
+A django application that allows multiple users to view their To Do list. They can create, read, update and delete their To Do list.
 
 
 ### Author
@@ -23,58 +23,58 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 ```
-Editor
-Git
-Github account
-Python Language
-Django framework
-PostgreSQL
+Code editor
+Git version control
+GitHub account
+Python programming language
+Django programming framework
+PostgreSQL database
 
 ```
 
 
 ### Installing
 
-When you create a repository on GitHub, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. Here is a series of steps on how to set up the project on your local machine.
+When a repository is created on GitHub, it exists as a remote repository. You can clone the repository to create a local copy on your computer and sync between the two locations. Here is a series of steps on how to set up this project on your local machine.
 
-Click [To Do List](https://github.com/faithnjoki/To-do-List) to navigate on the main page of the project repository on Github.
+1. Click [To Do List](https://github.com/faithnjoki/To-do-List) to navigate on the main page of the project repository on GitHub.
+2. Open your terminal, and change the current working directory to the location where you want the repository cloned to.
+3. Type the command below and press Enter to create your local clone.
 
-```
-Clone the repository using HTTPS, click "Clone with HTTPS".
-```
+   ```
+   git clone https://github.com/faithnjoki/To-do-List.git
+   ```
+4. Change your working directory to the To-do-List directory using the command below.
 
-```
-Open Terminal. Change the current working directory to the location where you want the cloned directory.
-```
+   ```
+   cd To-do-List
+   ```
+5. Install all dependencies needed to run the To-do-List using the command below.
 
-```
-Type https://github.com/faithnjoki/To-do-List and press Enter to create your local clone.
+   ```
+   pip install -r requirements.txt
+   ```
+6. Activate the virtual environment using the command below.
 
-```
+   ```
+   source virtual/bin/activate
+   ```
+7. Run the command below to launch the app.
 
-```
-Open To Do List, the cloned Repo in terminal and run : pip install -r requirements.txt to install the app dependencies
-
-```
-
-```
-Run source virtual/bin/activate to activate the virtual environment and python manage.py runserver to launch the app
-
-```
-
+   ```
+   python manage.py runserver
+   ```
 
 ## BDD
     As a user, I would like to:
-- Register  account.
-- Login the registered account. 
-- View Create,Read, update or delete on my to do list.
-- Can register Multiple users and login to their account and see their tasks thats shoukd have CRUD too.
+- Register a new account.
+- Login with details of the registered account. 
+- View, create, read, update or delete items on my To Do list.
 
 
-
-## Technologies Used
+## Technologies used
 - Python Django Framework
-- Html AND Css
+- HTML and CSS
 - Bootstrap
 
 
@@ -83,7 +83,7 @@ https://interviewtodolist.herokuapp.com/
 
 ## Support and contact details
 
-For any remarks,questions or advise feel free to contact me:
+For any remarks, questions or recommendations, feel free to contact me using the details below:
 
 Email: faithnjoki81@gmail.com
 
